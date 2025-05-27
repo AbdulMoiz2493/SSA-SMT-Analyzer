@@ -1,0 +1,230 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* ZORO Theme Colors */
+    --zoro-primary: 246 80% 60%;
+    --zoro-secondary: 270 76% 53%;
+    --zoro-accent: 260 84% 61%;
+    --zoro-background: 220 14% 96%;
+    --zoro-foreground: 222 47% 11%;
+    --code-sensei-blue: 226 83% 53%;
+    --code-sensei-purple: 265 89% 58%;
+    --code-sensei-background: 210 14% 97%;
+    --code-sensei-dark: 217 33% 17%;
+    --code-sensei-green: 160 84% 39%;
+    --code-sensei-red: 0 84% 60%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* ZORO Theme Colors */
+    --zoro-primary: 246 70% 50%;
+    --zoro-secondary: 270 76% 40%;
+    --zoro-accent: 260 84% 50%;
+    --zoro-background: 222 47% 11%;
+    --zoro-foreground: 210 40% 98%;
+    --code-sensei-blue: 226 83% 60%;
+    --code-sensei-purple: 265 89% 70%;
+    --code-sensei-background: 222 47% 11%;
+    --code-sensei-dark: 217 33% 17%;
+    --code-sensei-green: 160 84% 39%;
+    --code-sensei-red: 0 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ZORO Custom Styles */
+.bg-zoro-gradient {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600;
+}
+
+.text-zoro-gradient {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+.zoro-card {
+  @apply rounded-xl shadow-lg border-0 overflow-hidden transition-all hover:shadow-xl;
+}
+
+.zoro-input {
+  @apply rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20;
+}
+
+/* Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-subtle-pulse {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Cytoscape graph container */
+.cytoscape-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 0.5rem;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .cytoscape-container {
+  background-color: #0f172a;
+}
+
+/* Graph controls */
+.graph-controls {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.graph-controls button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .graph-controls button {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: white;
+}
+
+.graph-controls button:hover {
+  background-color: #f1f5f9;
+}
+
+.dark .graph-controls button:hover {
+  background-color: #334155;
+}
+
+/* Tooltip styling */
+.qtip {
+  max-width: 300px !important;
+  background-color: white !important;
+  color: #1e293b !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.375rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  padding: 0.5rem !important;
+}
+
+.dark .qtip {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.qtip-content {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
